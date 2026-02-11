@@ -10,21 +10,21 @@ function App() {
       id: 1,
       title: "Heyy, Wumi. 💕",
       content: "(I know I'm late. This took a while to make...)",
-      background: "linear-gradient(135deg, #8b3a62 0%, #5d2e4a 100%)",
+      background: "linear-gradient(135deg, #1c002f, #4b0f4b, #5f0826)",
       emoji: "💕"
     },
     {
       id: 2,
-      title: "My Love. 😊",
-      content: "Every moment with you is magical...",
-      background: "linear-gradient(135deg, #a85a7c 0%, #7d4558 100%)",
-      emoji: "😊"
+      title: "My Love. ♥️",
+      content: "YES, I knew you wouldn't buy that story, but I had to think of something to get you here...",
+      background: "linear-gradient(135deg, #1c002f, #4b0f4b, #5f0826)",
+      emoji: "♥️"
     },
     {
       id: 3,
-      title: "You're Amazing ✨",
-      content: "Your kindness, your humor, your everything...",
-      background: "linear-gradient(135deg, #c084a0 0%, #9d6a7e 100%)",
+      title: "Like I said, I have a request for you... ",
+      content: "(Oh, and have I mentioned how incredibly amazing you are? Because you are. Okay, back to the point...)",
+      background: "linear-gradient(135deg, #8b3a62 0%, #5d2e4a 100%)",
       emoji: "✨"
     },
     {
