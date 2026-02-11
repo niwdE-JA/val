@@ -1,8 +1,8 @@
 .app {
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   background: linear-gradient(135deg, var(--bg-start), var(--bg-mid) 48%, var(--bg-end));
 }

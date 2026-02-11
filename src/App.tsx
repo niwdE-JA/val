@@ -58,7 +58,7 @@ function App() {
     {
       id: 7,
       title: "Watches? ⌚",
-      content: "You got me a watch last year, so I thought to keep the cycle going...",
+      content: "You got me a Watch last year, so I thought to keep the cycle going...",
       background: "linear-gradient(135deg, #15275b 0%, #0e515c 100%)",
       emoji: "",
       isWatches: true

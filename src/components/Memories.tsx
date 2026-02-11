@@ -9,6 +9,14 @@ export default function Memories() {
   const [images] = useState<string[]>(importedImages)
   const [index, setIndex] = useState(0)
 
+  const hearts = Array.from({ length: 14 }).map((_, i) => ({
+    id: i,
+    left: Math.random() * 100,
+    top: Math.random() * 100,
+    delay: Math.random() * 3,
+    scale: 0.7 + Math.random() * 0.8
+  }))
+
   useEffect(() => {
     if (!images.length) return
     const t = setInterval(() => setIndex(i => (i + 1) % images.length), 3500)
@@ -29,7 +37,17 @@ export default function Memories() {
   return (
     <div className="memories-root">
       <div className="memories-stage">
-        <div className="memories-card">
+        <ul className="mem-hearts" aria-hidden>
+          {hearts.map(h => (
+            <li key={h.id} className="mem-heart" style={{ left: `${h.left}%`, top: `${h.top}%`, animationDelay: `${h.delay}s`, transform: `scale(${h.scale})` }}>❤️</li>
+          ))}
+        </ul>
+        <div className="memories-card" style={{ ['--bg-url' as any]: `url(${images[index]})` }}>
+          <div className="memories-caption">
+            <h2>Looking forward to making more <span className="text-purple">Memories like these</span> with you. ❤️</h2>
+            <br />
+          </div>
+
           <div className="memories-media">
             {images.map((src, i) => (
               <img
@@ -40,10 +58,6 @@ export default function Memories() {
                 loading="lazy"
               />
             ))}
-          </div>
-
-          <div className="memories-caption">
-            <h2>Looking forward to making more memories like these with you ❤️</h2>
           </div>
 
           <div className="memories-controls">

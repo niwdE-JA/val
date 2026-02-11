@@ -22,6 +22,27 @@
   align-items: center;
 }
 
+.memories-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.memories-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: var(--bg-url);
+  background-size: cover;
+  background-position: center;
+  transform: scale(1.12);
+  filter: blur(18px) saturate(0.7) contrast(0.85);
+  opacity: 0.24;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.memories-card > * { position: relative; z-index: 1 }
+
 .memories-media { width: 100%; height: 480px; display: grid; place-items: center; position: relative; overflow: hidden; border-radius: 12px; }
 .memories-media img { position: absolute; max-width: 100%; max-height: 100%; opacity: 0; transform: scale(1.03); transition: all 550ms cubic-bezier(.2,.9,.3,1); border-radius: 10px; box-shadow: 0 12px 36px rgba(0,0,0,0.45); }
 .memories-media img.active { opacity: 1; transform: scale(1); }
@@ -32,6 +53,11 @@
 .mem-btn { background: transparent; color: var(--muted-white); border: 2px solid rgba(255,255,255,0.06); padding: 8px 12px; border-radius: 8px; cursor: pointer; font-weight:700 }
 .mem-btn:hover { transform: translateY(-3px); box-shadow: 0 12px 30px rgba(0,0,0,0.3); }
 .mem-index { color: rgba(255,255,255,0.9); font-weight:700 }
+
+/* sparse heart particles for Memories page */
+.mem-hearts { position: absolute; inset: 0; pointer-events: none; z-index: 8; margin: 0; padding: 0; list-style: none; }
+.mem-heart { position: absolute; font-size: 18px; opacity: 0; transform-origin: center; animation: memHeart 6s linear infinite; filter: drop-shadow(0 6px 12px rgba(0,0,0,0.25)); }
+@keyframes memHeart { 0% { transform: translateY(6vh) scale(.9); opacity: 0 } 10% { opacity: 1 } 50% { transform: translateY(-8vh) scale(1.05); opacity: 1 } 100% { transform: translateY(-28vh) scale(.9); opacity: 0 } }
 
 @media (max-width: 768px) {
   .memories-media { height: 320px }
