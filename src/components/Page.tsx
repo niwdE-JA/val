@@ -115,7 +115,7 @@ export default function Page({ page, isTransitioning, onRespond, onContinue }: P
 
         <div className="photo-content">
           <div className="photo-placeholder">
-            <p>📸 Add your photo here</p>
+            <img src="/images/recreate.jpeg" alt="Photo to recreate" className="photo-image" />
           </div>
           
           <div className="photo-caption">
