@@ -25,14 +25,14 @@ export default function Wishlist() {
   return (
     <div className="wishlist-container">
       <div className="wishlist-content">
-        <h1 className="wishlist-title">My Wishlist ✨</h1>
-        <p className="wishlist-subtitle">Things I'd absolutely love...</p>
+        <h1 className="wishlist-title">Wishlist ✨</h1>
+        <p className="wishlist-subtitle">I'm your Genie for today. Let's make your wishes come true...</p>
 
         <div className="wishlist-input-section">
           <input
             type="text"
             className="wishlist-input"
-            placeholder="Add something I'd love..."
+            placeholder="Add something you'd love..."
             value={input}
             onChange={(e) => setInput(e.target.value)}
             onKeyPress={handleKeyPress}

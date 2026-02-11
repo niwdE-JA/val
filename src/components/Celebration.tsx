@@ -1,73 +1,64 @@
 import './Celebration.css'
 
-type ConfettiPiece = {
-  id: number
-  left: number
-  delay: number
-  duration: number
-  color: string
-  shape: 'circle' | 'square' | 'triangle'
-}
-
 export default function Celebration({ onContinue }: { onContinue?: () => void }) {
-  const colors = ['#FF1493', '#FFB6C1', '#FFC0CB', '#FFD700', '#FF69B4', '#FF85C0', '#FFB3D9', '#FFEEF8']
+  const colors = ['#800020', '#B22222', '#5B2C6F', '#7209B7', '#4B0082', '#8B0000']
 
-  const confetti: ConfettiPiece[] = [...Array(80)].map((_, i) => ({
+  const loves = Array.from({ length: 36 }).map((_, i) => ({
     id: i,
     left: Math.random() * 100,
-    delay: Math.random() * 0.8,
-    duration: 2.2 + Math.random() * 1.6,
-    color: colors[Math.floor(Math.random() * colors.length)],
-    shape: ['circle', 'square'][Math.floor(Math.random() * 2)] as any
+    top: Math.random() * 100,
+    delay: Math.random() * 2,
+    duration: 6 + Math.random() * 6,
+    scale: 0.7 + Math.random() * 0.8
   }))
 
   return (
-    <div className="celebration-container">
-      <div className="confetti-container">
-        {confetti.map(piece => (
-          <div
-            key={piece.id}
-            className={`confetti ${piece.shape}`}
-            style={{
-              left: `${piece.left}%`,
-              animationDelay: `${piece.delay}s`,
-              animationDuration: `${piece.duration}s`,
-              backgroundColor: piece.color
-            }}
-          />
-        ))}
+    <section className="celebration-root" aria-label="Celebration">
+      <div className="celebration-bg" aria-hidden="true">
+        <div className="bg-glow" />
       </div>
 
-      <div className="streamers">
-        <div className="streamer s1" />
-        <div className="streamer s2" />
-        <div className="streamer s3" />
-      </div>
+      <div className="celebration-stage">
+        <div className="center-card">
+          <div className="heart-wrap" aria-hidden>
+            <svg className="heart" viewBox="0 0 100 90" xmlns="http://www.w3.org/2000/svg" role="img">
+              <defs>
+                <linearGradient id="g" x1="0" x2="1">
+                  <stop offset="0%" stopColor="#5B2C6F" />
+                  <stop offset="100%" stopColor="#800020" />
+                </linearGradient>
+              </defs>
+              <path d="M50 82s-26-16-38-29C2 36 18 14 36 22c6 2 9 8 14 8s8-6 14-8C82 14 98 36 88 53 78 66 50 82 50 82z" fill="url(#g)" stroke="#fff" strokeOpacity="0.15" strokeWidth="1" />
+            </svg>
+          </div>
 
-      <div className="celebration-content">
-        <div className="ribbon">💘</div>
-        <h1 className="celebration-emoji">🎉</h1>
-        <h2 className="celebration-text">Yayyy!</h2>
-        <p className="celebration-subtext">I'm so happy you said yes! Let's celebrate 🎊</p>
+          <header className="celebration-head">
+            <h1 className="celebration-title">You said <span className="yes-highlight">YES!</span></h1>
+            <h3 className="celebration-sub">I'm not blushing, I promise. Odogwu's don't blush.</h3>
+          </header>
 
-        <div className="balloons">
-          {['❤️', '💕', '💖', '💗', '🥂'].map((emoji, i) => (
-            <div key={i} className="balloon" style={{ ['--balloon-index' as any]: i } as React.CSSProperties}>
-              {emoji}
-            </div>
+          <div className="actions-row">
+            <button className="btn-continue" onClick={() => onContinue?.()}>
+              Continue
+              <span className="btn-glow" />
+            </button>
+          </div>
+        </div>
+
+        {/* confetti removed per request */}
+
+        <ul className="love-layer" aria-hidden>
+          {loves.map(h => (
+            <li
+              key={h.id}
+              className="love"
+              style={{ left: `${h.left}%`, top: `${h.top}%`, animationDelay: `${h.delay}s`, animationDuration: `${h.duration}s`, transform: `scale(${h.scale})` }}
+            >
+              ❤️
+            </li>
           ))}
-        </div>
-
-        <div className="celebration-actions">
-          <button className="celebration-continue" onClick={() => onContinue?.()}>Continue</button>
-        </div>
+        </ul>
       </div>
-
-      <div className="fireworks">
-        <div className="fw fw1" />
-        <div className="fw fw2" />
-        <div className="fw fw3" />
-      </div>
-    </div>
+    </section>
   )
 }

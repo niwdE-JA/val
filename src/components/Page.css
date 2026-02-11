@@ -210,13 +210,13 @@
 }
 
 .yes-btn {
-  background: linear-gradient(135deg, #ff1493 0%, #ff69b4 100%);
+  background: linear-gradient(135deg, var(--accent-burgundy) 0%, var(--accent-purple) 100%);
   color: white;
 }
 
 .yes-btn:hover {
   transform: scale(1.05);
-  box-shadow: 0 6px 25px rgba(255, 20, 147, 0.4);
+  box-shadow: 0 8px 36px rgba(145,20,60,0.36);
 }
 
 .yes-btn:active {
@@ -225,7 +225,7 @@
 
 .maybe-btn {
   background: rgba(255, 255, 255, 0.9);
-  color: #ff1493;
+  color: var(--accent-burgundy);
 }
 
 .maybe-btn:hover {

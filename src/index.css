@@ -4,10 +4,21 @@
   box-sizing: border-box;
 }
 
+:root {
+  --bg-start: #1c002f; /* deep purple */
+  --bg-mid: #4b0f4b; /* rich magenta */
+  --bg-end: #5f0826; /* burgundy */
+  --accent-crimson: #B22222; /* crimson */
+  --accent-burgundy: #800020; /* burgundy */
+  --accent-purple: #5B2C6F; /* deep purple */
+  --muted-white: rgba(255,255,255,0.96);
+}
+
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: linear-gradient(135deg, #ffeef8 0%, #fff0f6 50%, #ffe6f0 100%);
+  background: linear-gradient(135deg, var(--bg-start) 0%, var(--bg-mid) 48%, var(--bg-end) 100%);
   min-height: 100vh;
+  color: var(--muted-white);
   overflow: auto;
 }
 

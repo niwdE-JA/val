@@ -68,13 +68,13 @@
   justify-content: center;
   transition: all 0.3s ease;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  color: #ff1493;
+  color: var(--accent-crimson);
   font-weight: bold;
 }
 
 .carousel-button:hover:not(.disabled) {
   background: rgba(255, 255, 255, 1);
-  box-shadow: 0 6px 20px rgba(255, 20, 147, 0.3);
+  box-shadow: 0 6px 20px rgba(178,34,34,0.28);
   transform: translateY(-50%) scale(1.1);
 }
 
@@ -111,10 +111,10 @@
 }
 
 .indicator.active {
-  background: rgba(255, 20, 147, 1);
+  background: var(--accent-crimson);
   width: 30px;
   border-radius: 6px;
-  box-shadow: 0 0 10px rgba(255, 20, 147, 0.5);
+  box-shadow: 0 0 14px rgba(178,34,34,0.36);
 }
 
 .page-counter {
@@ -125,7 +125,7 @@
   padding: 10px 20px;
   border-radius: 20px;
   font-weight: bold;
-  color: #ff1493;
+  color: var(--accent-burgundy);
   z-index: 100;
   font-size: 14px;
 }

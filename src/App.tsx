@@ -8,14 +8,14 @@ function App() {
   const initialPages = [
     {
       id: 1,
-      title: "Hello 💕",
-      content: "I have something special to ask you...",
+      title: "Heyy, Wumi. 💕",
+      content: "(I know I'm late. This took a while to make...)",
       background: "linear-gradient(135deg, #8b3a62 0%, #5d2e4a 100%)",
       emoji: "💕"
     },
     {
       id: 2,
-      title: "You Make Me Smile 😊",
+      title: "My Love. 😊",
       content: "Every moment with you is magical...",
       background: "linear-gradient(135deg, #a85a7c 0%, #7d4558 100%)",
       emoji: "😊"
@@ -42,30 +42,31 @@ function App() {
       id: 5,
       title: "Yayyy! 🎉",
       content: "I'm so happy!",
-      background: "linear-gradient(135deg, #c4a86e 0%, #8b7355 100%)",
+      // make background completely transprent so we can show the confetti behind it
+      background: "transparent",
       emoji: "🎉",
       isCelebration: true
     },
     {
       id: 6,
       title: "Now that we're here... 🎁",
-      content: "Let's talk gifts...",
-      background: "linear-gradient(135deg, #9b6b7c 0%, #6d4e5c 100%)",
+      content: "Let's talk GIFTSS!",
+      background: "linear-gradient(135deg, #1e8888 0%, #05424d 100%)",
       emoji: "🎁"
     },
     {
       id: 7,
       title: "Watches? ⌚",
       content: "You got me a watch last year, so I thought to keep the cycle going...",
-      background: "linear-gradient(135deg, #b89aa7 0%, #8c6f77 100%)",
-      emoji: "⌚",
+      background: "linear-gradient(135deg, #15275b 0%, #0e515c 100%)",
+      emoji: "",
       isWatches: true
     },
     {
       id: 8,
-      title: "My Wishlist 💝",
+      title: "Wishlist",
       content: "Things I'd love...",
-      background: "linear-gradient(135deg, #a67a8a 0%, #7d5463 100%)",
+      background: "linear-gradient(135deg, #e25858 0%, #ba3e6b 100%)",
       emoji: "💝",
       isWishlist: true
     },
@@ -73,7 +74,7 @@ function App() {
       id: 9,
       title: "📸 We should totally recreate this, by the way...",
       content: "",
-      background: "linear-gradient(135deg, #6b8e8b 0%, #4a605e 100%)",
+      background: "linear-gradient(135deg, #b78528f9 0%, #5c401d 100%)",
       emoji: "📸",
       isPhotoRecreate: true
     }
