@@ -65,16 +65,16 @@
 
 .page {
   width: 100%;
-  height: 100vh; /* ensure each page fills viewport */
+  min-height: 100vh; /* at least viewport height, but allow growth */
   display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
-  overflow: hidden;
+  overflow: visible; /* let document scroll instead of inner scroll */
   transition: opacity 0.3s ease;
   background-size: 400% 400%;
   box-sizing: border-box;
-  padding: 32px; /* keep inner spacing inside viewport */
+  padding: 32px;
 }
 
 .page.fade-in {
@@ -91,8 +91,8 @@
   animation: slideIn 0.8s ease-out;
   width: 100%;
   max-width: 1000px;
-  max-height: calc(100vh - 160px);
-  overflow: auto; /* allow inner scroll if content is tall */
+  /* allow content to grow so the browser scrolls the page */
+  overflow: visible;
   -webkit-overflow-scrolling: touch;
   padding: 12px;
 }
