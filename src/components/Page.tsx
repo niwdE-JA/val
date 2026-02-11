@@ -16,16 +16,19 @@ interface PageProps {
   }
   isTransitioning: boolean
   onRespond?: () => void
+  onContinue?: () => void
 }
 
-export default function Page({ page, isTransitioning, onRespond }: PageProps) {
+export default function Page({ page, isTransitioning, onRespond, onContinue }: PageProps) {
+  // receive onContinue via props for celebration page
+  // (we'll add it in the Carousel and pass through)
   if (page.isCelebration) {
     return (
       <div 
         className={`page ${isTransitioning ? 'fade-out' : 'fade-in'}`}
         style={{ background: page.background }}
       >
-        <Celebration />
+        <Celebration onContinue={onContinue} />
       </div>
     )
   }
@@ -65,11 +68,15 @@ export default function Page({ page, isTransitioning, onRespond }: PageProps) {
           
           <div className="watches-grid">
             <div className="watch-card">
+              {/* Example placeholder - replace with your image: */}
+              {/* <img src="/images/watch-formal.jpg" alt="Formal watch" className="watch-image" /> */}
               <div className="watch-image-placeholder">Formal / Classy Wear</div>
               <div className="watch-caption">Formal / Classy Wear</div>
             </div>
 
             <div className="watch-card">
+              {/* Example placeholder - replace with your image: */}
+              {/* <img src="/images/watch-casual.jpg" alt="Casual watch" className="watch-image" /> */}
               <div className="watch-image-placeholder">Casual Wear</div>
               <div className="watch-caption">Casual Wear (Pick one. I couldn't decide)</div>
             </div>

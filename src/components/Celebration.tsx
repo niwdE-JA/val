@@ -9,7 +9,7 @@ type ConfettiPiece = {
   shape: 'circle' | 'square' | 'triangle'
 }
 
-export default function Celebration() {
+export default function Celebration({ onContinue }: { onContinue?: () => void }) {
   const colors = ['#FF1493', '#FFB6C1', '#FFC0CB', '#FFD700', '#FF69B4', '#FF85C0', '#FFB3D9', '#FFEEF8']
 
   const confetti: ConfettiPiece[] = [...Array(80)].map((_, i) => ({
@@ -56,6 +56,10 @@ export default function Celebration() {
               {emoji}
             </div>
           ))}
+        </div>
+
+        <div className="celebration-actions">
+          <button className="celebration-continue" onClick={() => onContinue?.()}>Continue</button>
         </div>
       </div>
 

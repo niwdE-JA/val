@@ -72,6 +72,7 @@ export default function Carousel({ pages, onRespond }: CarouselProps) {
           page={pages[currentIndex]} 
           isTransitioning={isTransitioning}
           onRespond={handleRespond}
+          onContinue={goToNext}
         />
       </div>
 
