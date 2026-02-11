@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Page from './Page.tsx'
 import './Carousel.css'
 
@@ -23,6 +23,7 @@ interface CarouselProps {
 export default function Carousel({ pages, onRespond }: CarouselProps) {
   const [currentIndex, setCurrentIndex] = useState(0)
   const [isTransitioning, setIsTransitioning] = useState(false)
+  const [responding, setResponding] = useState(false)
 
   const goToNext = () => {
     if (currentIndex < pages.length - 1) {
@@ -46,9 +47,23 @@ export default function Carousel({ pages, onRespond }: CarouselProps) {
 
   const handleRespond = () => {
     onRespond?.()
-    // Move to next page (celebration page)
-    goToNext()
+    // mark responding; when pages prop updates we'll jump to celebration
+    setResponding(true)
   }
+
+  useEffect(() => {
+    if (!responding) return
+    const idx = pages.findIndex((p) => p.isCelebration)
+    if (idx !== -1) {
+      // jump to first celebration page with a smooth transition
+      setIsTransitioning(true)
+      setTimeout(() => {
+        setCurrentIndex(idx)
+        setIsTransitioning(false)
+        setResponding(false)
+      }, 300)
+    }
+  }, [pages, responding])
 
   return (
     <div className="carousel-container">

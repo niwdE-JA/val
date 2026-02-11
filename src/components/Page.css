@@ -252,6 +252,48 @@
   font-style: italic;
 }
 
+/* Watches grid cards */
+.watches-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  width: 100%;
+  margin-top: 30px;
+}
+
+.watch-card {
+  background: linear-gradient(135deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
+  border-radius: 16px;
+  padding: 20px;
+  text-align: center;
+  border: 1px solid rgba(255,255,255,0.06);
+  backdrop-filter: blur(4px);
+}
+
+.watch-image-placeholder {
+  width: 100%;
+  aspect-ratio: 4/3;
+  background: rgba(255,255,255,0.04);
+  border-radius: 12px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color: rgba(255,255,255,0.95);
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.watch-caption {
+  color: rgba(255,255,255,0.95);
+  font-weight: 800;
+  margin-bottom: 6px;
+}
+
+.watch-hint {
+  color: rgba(255,255,255,0.75);
+  font-size: 14px;
+}
+
 /* Photo Recreate Page Styles */
 .photo-recreate-page {
   display: flex;
@@ -335,5 +377,11 @@
   .final-buttons {
     flex-direction: column;
     gap: 15px;
+  }
+
+  /* responsive watches grid */
+  .watches-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
   }
 }

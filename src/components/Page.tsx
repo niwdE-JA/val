@@ -63,9 +63,16 @@ export default function Page({ page, isTransitioning, onRespond }: PageProps) {
           <h1 className="page-title">{page.title}</h1>
           <p className="page-message">{page.content}</p>
           
-          <div className="watches-placeholder">
-            <p>Watch images will appear here</p>
-            <p className="text-sm">(Add background images in this section)</p>
+          <div className="watches-grid">
+            <div className="watch-card">
+              <div className="watch-image-placeholder">Formal / Classy Wear</div>
+              <div className="watch-caption">Formal / Classy Wear</div>
+            </div>
+
+            <div className="watch-card">
+              <div className="watch-image-placeholder">Casual Wear</div>
+              <div className="watch-caption">Casual Wear (Pick one. I couldn't decide)</div>
+            </div>
           </div>
         </div>
 

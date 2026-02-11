@@ -57,7 +57,7 @@ function App() {
       id: 7,
       title: "Watches? ⌚",
       content: "You got me a watch last year, so I thought to keep the cycle going...",
-      background: "linear-gradient(135deg, #8b7d7d 0%, #5c4d4d 100%)",
+      background: "linear-gradient(135deg, #b89aa7 0%, #8c6f77 100%)",
       emoji: "⌚",
       isWatches: true
     },
