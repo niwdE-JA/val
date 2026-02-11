@@ -2,12 +2,12 @@ import { useState } from 'react'
 import './Wishlist.css'
 
 export default function Wishlist() {
-  const [items, setItems] = useState<string[]>(['Diamond Ring', 'Perfume', 'Spa Day', 'Weekend Getaway'])
+  const [items, setItems] = useState<string[]>(['Chocolate Cake & Ice Cream 🍰🍦', 'Cute Dresses 👗', 'Airpods 🎶', 'Weekend Getaway 🌚', 'Flowers 💐', 'Teddy Bear (Jo needs a sibling) 🧸'])
   const [input, setInput] = useState('')
 
   const addItem = () => {
     if (input.trim()) {
-      setItems([...items, input])
+      setItems([ input, ...items ])
       setInput('')
     }
   }

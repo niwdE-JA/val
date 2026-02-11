@@ -32,9 +32,9 @@
 
 .wishlist-content {
   background: rgba(255, 255, 255, 0.95);
-  border-radius: 30px;
-  padding: 50px;
-  max-width: 600px;
+  border-radius: 24px;
+  padding: 40px;
+  max-width: 480px;
   width: 100%;
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
   backdrop-filter: blur(10px);
@@ -42,32 +42,32 @@
 }
 
 .wishlist-title {
-  font-size: 48px;
+  font-size: 38px;
   color: #ff1493;
-  margin: 0 0 10px 0;
+  margin: 0 0 8px 0;
   text-align: center;
   font-weight: 900;
 }
 
 .wishlist-subtitle {
-  font-size: 18px;
+  font-size: 14px;
   color: #666;
   text-align: center;
-  margin: 0 0 30px 0;
+  margin: 0 0 24px 0;
 }
 
 .wishlist-input-section {
   display: flex;
-  gap: 10px;
-  margin-bottom: 30px;
+  gap: 8px;
+  margin-bottom: 24px;
 }
 
 .wishlist-input {
   flex: 1;
-  padding: 15px 20px;
+  padding: 12px 16px;
   border: 2px solid #ffc0cb;
-  border-radius: 15px;
-  font-size: 16px;
+  border-radius: 12px;
+  font-size: 14px;
   outline: none;
   transition: all 0.3s ease;
   font-family: inherit;
@@ -82,10 +82,10 @@
   background: linear-gradient(135deg, #ff1493 0%, #ff69b4 100%);
   color: white;
   border: none;
-  width: 50px;
-  height: 50px;
-  border-radius: 15px;
-  font-size: 24px;
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  font-size: 19px;
   cursor: pointer;
   transition: all 0.3s ease;
   font-weight: bold;
@@ -101,7 +101,7 @@
 }
 
 .wishlist-items {
-  max-height: 400px;
+  max-height: 320px;
   overflow-y: auto;
 }
 
@@ -116,9 +116,9 @@
   justify-content: space-between;
   align-items: center;
   background: linear-gradient(135deg, #fff0f5 0%, #ffe6f0 100%);
-  padding: 15px 20px;
-  margin-bottom: 12px;
-  border-radius: 12px;
+  padding: 12px 16px;
+  margin-bottom: 10px;
+  border-radius: 10px;
   animation: itemSlideIn 0.4s ease-out;
   border-left: 4px solid #ff1493;
   transition: all 0.3s ease;
@@ -130,7 +130,7 @@
 }
 
 .wishlist-item-text {
-  font-size: 16px;
+  font-size: 13px;
   color: #333;
   font-weight: 500;
 }
@@ -139,11 +139,11 @@
   background: rgba(255, 20, 147, 0.2);
   color: #ff1493;
   border: none;
-  width: 30px;
-  height: 30px;
+  width: 24px;
+  height: 24px;
   border-radius: 50%;
   cursor: pointer;
-  font-size: 18px;
+  font-size: 14px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -181,18 +181,18 @@
 
 @media (max-width: 768px) {
   .wishlist-content {
-    padding: 30px 20px;
+    padding: 24px 16px;
   }
 
   .wishlist-title {
-    font-size: 36px;
+    font-size: 29px;
   }
 
   .wishlist-subtitle {
-    font-size: 16px;
+    font-size: 13px;
   }
 
   .wishlist-items {
-    max-height: 300px;
+    max-height: 240px;
   }
 }
