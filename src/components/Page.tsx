@@ -69,16 +69,16 @@ export default function Page({ page, isTransitioning, onRespond, onContinue }: P
           <div className="watches-grid">
             <div className="watch-card">
               {/* Example placeholder - replace with your image: */}
+              <div className="watch-caption">Formal / Classy Wear</div>
               <img src="/images/watch-1.jpeg" alt="Formal watch" className="watch-image" />
               <div className="watch-image-placeholder">Formal / Classy Wear</div>
-              <div className="watch-caption">Formal / Classy Wear</div>
             </div>
 
             <div className="watch-card">
               {/* Example placeholder - replace with your image: */}
+              <div className="watch-caption">Casual Wear (Pick one. I couldn't decide)</div>
               <img src="/images/watch-2.jpeg" alt="Casual watch" className="watch-image" />
               <div className="watch-image-placeholder">Casual Wear</div>
-              <div className="watch-caption">Casual Wear (Pick one. I couldn't decide)</div>
             </div>
           </div>
         </div>
