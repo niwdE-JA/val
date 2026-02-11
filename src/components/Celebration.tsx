@@ -1,7 +1,6 @@
 import './Celebration.css'
 
 export default function Celebration({ onContinue }: { onContinue?: () => void }) {
-  const colors = ['#800020', '#B22222', '#5B2C6F', '#7209B7', '#4B0082', '#8B0000']
 
   const loves = Array.from({ length: 36 }).map((_, i) => ({
     id: i,
