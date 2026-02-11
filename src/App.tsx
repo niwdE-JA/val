@@ -79,6 +79,15 @@ function App() {
       emoji: "📸",
       isPhotoRecreate: true
     }
+    ,
+    {
+      id: 10,
+      title: "Memories",
+      content: "",
+      background: "linear-gradient(135deg, #3a0836 0%, #800020 50%, #5B2C6F 100%)",
+      emoji: "💞",
+      isMemories: true
+    }
   ]
 
   const allPages = hasResponded ? [...initialPages, ...celebratePages] : initialPages

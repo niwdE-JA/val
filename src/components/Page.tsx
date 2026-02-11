@@ -1,5 +1,6 @@
 import Celebration from './Celebration'
 import Wishlist from './Wishlist'
+import Memories from './Memories'
 import './Page.css'
 
 interface PageProps {
@@ -12,6 +13,7 @@ interface PageProps {
     isWatches?: boolean
     isWishlist?: boolean
     isPhotoRecreate?: boolean
+    isMemories?: boolean
     background: string
   }
   isTransitioning: boolean
@@ -134,6 +136,17 @@ export default function Page({ page, isTransitioning, onRespond, onContinue }: P
             </div>
           ))}
         </div>
+      </div>
+    )
+  }
+
+  if (page.isMemories) {
+    return (
+      <div
+        className={`page ${isTransitioning ? 'fade-out' : 'fade-in'}`}
+        style={{ background: page.background }}
+      >
+        <Memories />
       </div>
     )
   }

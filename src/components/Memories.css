@@ -1,0 +1,40 @@
+.memories-root {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 40px 20px;
+  box-sizing: border-box;
+}
+
+.memories-stage {
+  width: 100%;
+  max-width: 960px;
+}
+
+.memories-card {
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 24px 80px rgba(0,0,0,0.42);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: center;
+}
+
+.memories-media { width: 100%; height: 480px; display: grid; place-items: center; position: relative; overflow: hidden; border-radius: 12px; }
+.memories-media img { position: absolute; max-width: 100%; max-height: 100%; opacity: 0; transform: scale(1.03); transition: all 550ms cubic-bezier(.2,.9,.3,1); border-radius: 10px; box-shadow: 0 12px 36px rgba(0,0,0,0.45); }
+.memories-media img.active { opacity: 1; transform: scale(1); }
+
+.memories-caption h2 { color: var(--muted-white); font-size: 20px; text-align: center; margin: 6px 0 0 0; }
+
+.memories-controls { display:flex; gap: 12px; align-items:center; justify-content:center; }
+.mem-btn { background: transparent; color: var(--muted-white); border: 2px solid rgba(255,255,255,0.06); padding: 8px 12px; border-radius: 8px; cursor: pointer; font-weight:700 }
+.mem-btn:hover { transform: translateY(-3px); box-shadow: 0 12px 30px rgba(0,0,0,0.3); }
+.mem-index { color: rgba(255,255,255,0.9); font-weight:700 }
+
+@media (max-width: 768px) {
+  .memories-media { height: 320px }
+  .memories-card { padding: 14px }
+  .memories-caption h2 { font-size: 16px }
+}
