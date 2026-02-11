@@ -1,0 +1,339 @@
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+    transform: scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-30px) rotate(5deg);
+  }
+}
+
+@keyframes heartBeat {
+  0%, 100% {
+    transform: scale(1);
+  }
+  25% {
+    transform: scale(1.3);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+@keyframes sparkle {
+  0%, 100% {
+    opacity: 0;
+    transform: scale(0) rotate(0deg);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1) rotate(180deg);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.page {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  transition: opacity 0.3s ease;
+  background-size: 400% 400%;
+}
+
+.page.fade-in {
+  animation: fadeIn 0.5s ease-out;
+}
+
+.page.fade-out {
+  animation: fadeOut 0.3s ease-in;
+}
+
+.page-content {
+  z-index: 10;
+  text-align: center;
+  animation: slideIn 0.8s ease-out;
+}
+
+.emoji-large {
+  font-size: 120px;
+  margin-bottom: 20px;
+  animation: float 3s ease-in-out infinite;
+  display: inline-block;
+}
+
+.page-title {
+  font-size: 48px;
+  color: white;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.page-message {
+  font-size: 24px;
+  color: rgba(255, 255, 255, 0.95);
+  margin-bottom: 40px;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.15);
+  line-height: 1.6;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.floating-hearts {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.heart {
+  position: absolute;
+  bottom: -50px;
+  font-size: 30px;
+  opacity: 0.7;
+  animation: float 4s ease-in infinite;
+}
+
+.heart:nth-child(1) {
+  animation-duration: 5s;
+  left: 10%;
+}
+
+.heart:nth-child(2) {
+  animation-duration: 6s;
+  left: 20%;
+  animation-delay: 0.5s;
+}
+
+.heart:nth-child(3) {
+  animation-duration: 5.5s;
+  left: 30%;
+  animation-delay: 1s;
+}
+
+.heart:nth-child(4) {
+  animation-duration: 6.5s;
+  left: 40%;
+  animation-delay: 1.5s;
+}
+
+.heart:nth-child(5) {
+  animation-duration: 5.8s;
+  left: 50%;
+  animation-delay: 2s;
+}
+
+.sparkles {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 2;
+}
+
+.sparkle {
+  position: absolute;
+  font-size: 24px;
+  animation: sparkle 2s ease-in-out infinite;
+}
+
+.final-buttons {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  margin-top: 60px;
+  flex-wrap: wrap;
+  animation: slideIn 1s ease-out 0.3s both;
+}
+
+.button {
+  padding: 15px 40px;
+  font-size: 18px;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.yes-btn {
+  background: linear-gradient(135deg, #ff1493 0%, #ff69b4 100%);
+  color: white;
+}
+
+.yes-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 25px rgba(255, 20, 147, 0.4);
+}
+
+.yes-btn:active {
+  transform: scale(0.98);
+}
+
+.maybe-btn {
+  background: rgba(255, 255, 255, 0.9);
+  color: #ff1493;
+}
+
+.maybe-btn:hover {
+  background: white;
+  transform: translateX(20px);
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.15);
+}
+
+.maybe-btn:active {
+  transform: translateX(18px);
+}
+
+/* Watches Page Styles */
+.watches-page .page-content {
+  max-width: 800px;
+}
+
+.watches-placeholder {
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px dashed rgba(255, 255, 255, 0.5);
+  border-radius: 20px;
+  padding: 60px 40px;
+  margin-top: 40px;
+  backdrop-filter: blur(5px);
+}
+
+.watches-placeholder p {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 18px;
+  margin: 10px 0;
+}
+
+.watches-placeholder .text-sm {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.7);
+  font-style: italic;
+}
+
+/* Photo Recreate Page Styles */
+.photo-recreate-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.photo-content {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  max-width: 700px;
+  width: 100%;
+  align-items: center;
+}
+
+.photo-placeholder {
+  width: 100%;
+  aspect-ratio: 4/3;
+  background: rgba(255, 255, 255, 0.15);
+  border: 3px dashed rgba(255, 255, 255, 0.4);
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(8px);
+  animation: slideIn 0.8s ease-out;
+}
+
+.photo-placeholder p {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 20px;
+  text-align: center;
+}
+
+.photo-caption {
+  text-align: center;
+  color: white;
+  animation: slideIn 0.8s ease-out 0.2s both;
+}
+
+.photo-caption h2 {
+  font-size: 42px;
+  margin: 0 0 15px 0;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.photo-caption p {
+  font-size: 20px;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .page-title {
+    font-size: 36px;
+  }
+
+  .page-message {
+    font-size: 18px;
+  }
+
+  .emoji-large {
+    font-size: 80px;
+  }
+
+  .heart {
+    font-size: 20px;
+  }
+
+  .sparkle {
+    font-size: 18px;
+  }
+
+  .button {
+    padding: 12px 30px;
+    font-size: 16px;
+  }
+
+  .final-buttons {
+    flex-direction: column;
+    gap: 15px;
+  }
+}
