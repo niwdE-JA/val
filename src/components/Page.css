@@ -283,6 +283,20 @@
   margin-bottom: 12px;
 }
 
+/* If an actual image is added, make it fill the card and hide the placeholder text */
+.watch-card img.watch-image {
+  width: 100%;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+  border-radius: 12px;
+  display: block;
+  margin-bottom: 12px;
+}
+
+.watch-card img.watch-image + .watch-image-placeholder {
+  display: none;
+}
+
 .watch-caption {
   color: rgba(255,255,255,0.95);
   font-weight: 800;
