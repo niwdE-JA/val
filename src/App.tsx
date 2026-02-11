@@ -31,7 +31,8 @@ function App() {
       id: 4,
       title: "Will You... 🎀",
       content: "Be my Valentine?",
-      background: "linear-gradient(135deg, #ffd4e5 0%, #ffb3d9 100%)",
+      // deep romantic gradient (purple → burgundy → plum)
+      background: "linear-gradient(135deg, #3a0836 0%, #800020 50%, #5B2C6F 100%)",
       emoji: "🎀",
       isFinal: true
     }
