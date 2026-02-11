@@ -1,9 +1,13 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import Carousel from './components/Carousel'
+import Loading from './components/Loading'
 import './App.css'
 
 function App() {
   const [hasResponded, setHasResponded] = useState(false)
+  const [isLoaded, setIsLoaded] = useState(false)
+  const [loadedCount, setLoadedCount] = useState(0)
+  const [totalCount, setTotalCount] = useState(0)
 
   const initialPages = [
     {
@@ -91,6 +95,54 @@ function App() {
   ]
 
   const allPages = hasResponded ? [...initialPages, ...celebratePages] : initialPages
+
+  useEffect(() => {
+    // Gather memory assets via Vite import.glob (returns URLs)
+    const memoryModules = import.meta.glob('./assets/memories/*.{png,jpg,jpeg,webp}', { eager: true, as: 'url' }) as Record<string, string>
+    const memoryUrls = Object.values(memoryModules || {})
+
+    // Public images (in /public/images)
+    const publicUrls = [
+      '/images/watch-1.jpeg',
+      '/images/watch-2.jpeg',
+      '/images/recreate.jpeg'
+    ]
+
+    const allUrls = [...memoryUrls, ...publicUrls]
+    setTotalCount(allUrls.length)
+
+    if (allUrls.length === 0) {
+      setIsLoaded(true)
+      return
+    }
+
+    let loaded = 0
+    const onLoadOrError = () => {
+      loaded += 1
+      setLoadedCount(loaded)
+      if (loaded >= allUrls.length) setIsLoaded(true)
+    }
+
+    // Start preloading
+    allUrls.forEach((u) => {
+      try {
+        const img = new Image()
+        img.src = u
+        img.onload = onLoadOrError
+        img.onerror = onLoadOrError
+      } catch (e) {
+        onLoadOrError()
+      }
+    })
+
+    // Fallback timeout in case some images hang
+    const fallback = setTimeout(() => setIsLoaded(true), 8000)
+    return () => clearTimeout(fallback)
+  }, [])
+
+  if (!isLoaded) {
+    return <Loading loaded={loadedCount} total={totalCount} />
+  }
 
   return (
     <div className="app">
