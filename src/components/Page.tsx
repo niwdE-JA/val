@@ -62,7 +62,6 @@ export default function Page({ page, isTransitioning, onRespond, onContinue }: P
         </div>
 
         <div className="page-content">
-          <div className="emoji-large">{page.emoji}</div>
           <h1 className="page-title">{page.title}</h1>
           <p className="page-message">{page.content}</p>
           
